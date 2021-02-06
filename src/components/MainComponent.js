@@ -11,7 +11,6 @@ import { COMMENTS } from '../shared/comments';
 import { PARTNERS } from '../shared/partners';
 import { PROMOTIONS } from '../shared/promotions';
 
-
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -42,14 +41,14 @@ class Main extends Component {
                     comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
                 />
             );
-        }
+        };
 
         return (
             <div>
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
+                    <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
                     <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                     <Route exact path='/contactus' component={Contact} />
                     <Redirect to='/home' />
