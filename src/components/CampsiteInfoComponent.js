@@ -18,7 +18,7 @@ function RenderCampsite({ campsite }) {
             <FadeTransform
                 in
                 transformProps={{
-                    exitTransform: 'scales(0.5) translateY(50%)'
+                    exitTransform: 'scale(0.5) translateY(-50%)'
                 }}>
                 <Card>
                     <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
@@ -43,7 +43,7 @@ function RenderComments({ comments, postComment, campsiteId }) {
                                 <div>
                                     <p>
                                         {comment.text}<br />
-                                    -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}
+                                            -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}
                                     </p>
                                 </div>
                             </Fade>
